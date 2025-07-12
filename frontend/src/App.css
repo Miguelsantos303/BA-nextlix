@@ -1,38 +1,176 @@
-.App {
-    text-align: center;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Netflix-specific styles */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
+  overflow-x: hidden;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Hide scrollbars */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Custom animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.App-link {
-    color: #61dafb;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Netflix red gradient */
+.bg-netflix-gradient {
+  background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+}
+
+/* Custom backdrop blur for better browser support */
+.backdrop-blur-custom {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Content card hover effects */
+.content-card:hover .content-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-overlay {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+/* Video player styles */
+.video-modal {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Hero banner gradient overlay */
+.hero-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+.hero-gradient-bottom {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    transparent 50%
+  );
+}
+
+/* Loading animation */
+.loading-dots {
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0%, 20% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+  80%, 100% { opacity: 0.5; transform: scale(1); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .content-card {
+    min-width: 160px;
+  }
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-white text-black font-bold py-2 px-6 rounded transition-colors duration-200;
+}
+
+.btn-primary:hover {
+  @apply bg-gray-200;
+}
+
+.btn-secondary {
+  @apply bg-gray-500 bg-opacity-70 text-white font-bold py-2 px-6 rounded transition-colors duration-200;
+}
+
+.btn-secondary:hover {
+  @apply bg-gray-500 bg-opacity-50;
+}
+
+/* Content row scroll buttons */
+.scroll-button {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.content-row:hover .scroll-button {
+  opacity: 1;
+}
+
+/* Text selection */
+::selection {
+  background-color: #e50914;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #e50914;
+  color: white;
 }
