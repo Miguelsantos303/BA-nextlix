@@ -81,7 +81,10 @@ export const NetflixHeader = ({ scrolled }) => {
     >
       <div className="flex items-center justify-between px-4 md:px-16 py-4">
         <div className="flex items-center space-x-8">
-          <h1 className="text-red-600 text-2xl md:text-4xl font-bold">NETFLIX</h1>
+          <div className="flex flex-col">
+            <h1 className="text-red-600 text-2xl md:text-4xl font-bold">NETFLIX</h1>
+            <p className="text-white text-sm md:text-base mt-1">Beatriz Alves enjoy a free streaming</p>
+          </div>
           <nav className="hidden md:flex space-x-6">
             <a href="#" className="text-white hover:text-gray-300 transition-colors">Home</a>
             <a href="#" className="text-white hover:text-gray-300 transition-colors">TV Shows</a>
