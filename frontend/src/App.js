@@ -15,7 +15,7 @@ import {
 
 const BACKEND_URL = (process.env.REACT_APP_BACKEND_URL || '').replace(/\/+$/, '');
 const API = `${BACKEND_URL}/api`;
-const TOKEN_KEY = 'ba_nextlix_token';
+const TOKEN_KEY = 'nextlix_token';
 
 const absoluteUrl = (url) => (url.startsWith('http') ? url : `${BACKEND_URL}${url}`);
 

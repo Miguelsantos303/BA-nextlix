@@ -199,9 +199,8 @@ export const LoginPage = ({ onLogin, error, busy }) => {
 /* ------------------------------------------------------------------ */
 
 const PROFILES = [
-  { name: 'Beatriz', colors: 'from-pink-500 to-red-600', emoji: '👩🏻' },
   { name: 'Miguel', colors: 'from-blue-500 to-indigo-700', emoji: '👨🏻' },
-  { name: 'Nós os dois', colors: 'from-red-600 to-rose-900', emoji: '❤️' },
+  { name: 'Convidado', colors: 'from-red-600 to-rose-900', emoji: '🍿' },
 ];
 
 export const ProfileGate = ({ onPick }) => (
@@ -824,7 +823,7 @@ export const Footer = () => (
   <footer className="px-4 md:px-14 py-10 text-gray-500 text-sm">
     <div className="flex items-center gap-2 mb-3">
       <FaHeart className="text-[#E50914]" />
-      <span>Feito com amor · BA-Nextlix</span>
+      <span>Feito com amor · Nextlix</span>
     </div>
     <p>Uma edição privada e exclusiva. Todos os momentos reservados.</p>
   </footer>

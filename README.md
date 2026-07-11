@@ -1,11 +1,11 @@
-# BA-Nextlix ❤️
+# Nextlix ❤️
 
-Um site com o visual da Netflix, mas privado e só para nós: vídeos e fotografias de casal, protegidos por nome de utilizador e palavra-passe.
+Um site com o visual da Netflix, mas privado: vídeos e fotografias pessoais, protegidos por nome de utilizador e palavra-passe.
 
 ## O que tem
 
 - **Página de login** ao estilo Netflix (utilizador + palavra-passe)
-- Ecrã **"Quem está a ver?"** com perfis (Beatriz, Miguel, Nós os dois)
+- Ecrã **"Quem está a ver?"** com perfis (Miguel, Convidado)
 - **Página principal** com logótipo, banner em destaque e filas de conteúdo:
   - Adicionados recentemente
   - Os Nossos Vídeos
@@ -19,9 +19,9 @@ Um site com o visual da Netflix, mas privado e só para nós: vídeos e fotograf
 Estão no ficheiro `backend/.env` — **muda-as antes de partilhar o site**:
 
 ```
-AUTH_USERNAME="beatriz"
+AUTH_USERNAME="miguel"
 AUTH_PASSWORD="amor2026"
-JWT_SECRET="ba-nextlix-troca-este-segredo"
+JWT_SECRET="nextlix-troca-este-segredo"
 ```
 
 ## Como adicionar vídeos e fotografias

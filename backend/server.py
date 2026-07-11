@@ -21,7 +21,7 @@ ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 # Credenciais de acesso (alterar no ficheiro backend/.env)
-AUTH_USERNAME = os.environ.get('AUTH_USERNAME', 'beatriz')
+AUTH_USERNAME = os.environ.get('AUTH_USERNAME', 'miguel')
 AUTH_PASSWORD = os.environ.get('AUTH_PASSWORD', 'amor2026')
 JWT_SECRET = os.environ.get('JWT_SECRET', 'muda-este-segredo')
 JWT_ALGORITHM = 'HS256'
@@ -44,7 +44,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title='BA-Nextlix')
+app = FastAPI(title='Nextlix')
 api_router = APIRouter(prefix='/api')
 security = HTTPBearer(auto_error=False)
 
@@ -150,7 +150,7 @@ def list_dir(directory: Path, kind: str, exts: set, titles: dict) -> List[MediaI
 
 @api_router.get('/')
 async def root():
-    return {'message': 'BA-Nextlix API'}
+    return {'message': 'Nextlix API'}
 
 
 @api_router.post('/login', response_model=LoginResponse)
