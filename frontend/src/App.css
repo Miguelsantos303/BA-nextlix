@@ -85,6 +85,20 @@ html {
   -webkit-backdrop-filter: blur(5px);
 }
 
+/* Fundo da página de login */
+.login-backdrop {
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(229, 9, 20, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, rgba(178, 7, 16, 0.2) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 90%, rgba(229, 9, 20, 0.15) 0%, transparent 60%),
+    linear-gradient(180deg, #0b0b0b 0%, #000 100%);
+}
+
+/* Gradiente do cabeçalho antes do scroll */
+.header-gradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+}
+
 /* Hero banner gradient overlay */
 .hero-gradient {
   background: linear-gradient(
