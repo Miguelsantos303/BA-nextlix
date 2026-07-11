@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   FaPlay, FaPlus, FaChevronLeft, FaChevronRight, FaTimes,
-  FaHeart, FaSignOutAlt, FaCloudUploadAlt, FaTrash, FaSearch, FaBell, FaCaretDown
+  FaHeart, FaSignOutAlt, FaCloudUploadAlt, FaTrash, FaSearch, FaBell, FaCaretDown,
+  FaDownload
 } from 'react-icons/fa';
 
 /* ------------------------------------------------------------------ */
@@ -585,11 +586,20 @@ export const VideoModal = ({ item, onClose }) => {
             <FaTimes />
           </button>
           <video src={item.src} className="w-full max-h-[80vh]" controls autoPlay playsInline />
-          <div className="px-5 py-4">
-            <h3 className="text-white text-lg md:text-xl font-bold">{item.title}</h3>
-            <p className="text-green-400 text-sm font-semibold mt-1">
-              100% de compatibilidade · Só para nós
-            </p>
+          <div className="px-5 py-4 flex items-center justify-between gap-4">
+            <div>
+              <h3 className="text-white text-lg md:text-xl font-bold">{item.title}</h3>
+              <p className="text-green-400 text-sm font-semibold mt-1">
+                100% de compatibilidade · Só para nós
+              </p>
+            </div>
+            <a
+              href={item.src}
+              download
+              className="flex items-center gap-2 bg-gray-600/60 hover:bg-gray-600/40 text-white font-semibold rounded px-4 py-2.5 whitespace-nowrap transition-colors"
+            >
+              <FaDownload /> Transferir
+            </a>
           </div>
         </motion.div>
       </motion.div>
@@ -640,6 +650,15 @@ export const PhotoLightbox = ({ photos, index, onClose, onIndex }) => {
         >
           <FaTimes />
         </button>
+        <a
+          href={photo.src}
+          download
+          onClick={(e) => e.stopPropagation()}
+          aria-label="Transferir fotografia"
+          className="absolute top-4 right-20 z-10 w-11 h-11 bg-black/60 text-white rounded-full flex items-center justify-center hover:bg-black/80"
+        >
+          <FaDownload />
+        </a>
         {photos.length > 1 && (
           <>
             <button
