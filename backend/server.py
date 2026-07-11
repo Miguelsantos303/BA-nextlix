@@ -263,6 +263,14 @@ mimetypes.add_type('video/mp4', '.m4v')
 app.include_router(api_router)
 app.mount('/api/files', StaticFiles(directory=MEDIA_DIR), name='files')
 
+# Servir o site (frontend compilado) a partir do mesmo servidor,
+# para correr tudo com um único comando no computador de casa.
+FRONTEND_BUILD = ROOT_DIR.parent / 'frontend' / 'build'
+if FRONTEND_BUILD.is_dir():
+    app.mount('/', StaticFiles(directory=FRONTEND_BUILD, html=True), name='site')
+else:
+    logger.info('frontend/build não existe — a servir apenas a API')
+
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
