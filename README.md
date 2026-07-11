@@ -5,7 +5,7 @@ Um site com o visual da Netflix, mas privado: vídeos e fotografias pessoais, pr
 ## O que tem
 
 - **Página de login** ao estilo Netflix (utilizador + palavra-passe)
-- Ecrã **"Quem está a ver?"** com perfis (Miguel, Convidado)
+- Ecrã **"Quem está a ver?"** com perfis (Miguel, Ana, Nós os dois)
 - **Página principal** com logótipo, banner em destaque e filas de conteúdo:
   - Adicionados recentemente
   - Os Nossos Vídeos

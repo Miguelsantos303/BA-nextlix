@@ -200,7 +200,8 @@ export const LoginPage = ({ onLogin, error, busy }) => {
 
 const PROFILES = [
   { name: 'Miguel', colors: 'from-blue-500 to-indigo-700', emoji: '👨🏻' },
-  { name: 'Convidado', colors: 'from-red-600 to-rose-900', emoji: '🍿' },
+  { name: 'Ana', colors: 'from-pink-500 to-red-600', emoji: '👩🏻' },
+  { name: 'Nós os dois', colors: 'from-red-600 to-rose-900', emoji: '❤️' },
 ];
 
 export const ProfileGate = ({ onPick }) => (
